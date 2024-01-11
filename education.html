@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/71cf8ec36c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <!-- Education Section -->
+<section id="Education2">
+  <div class="container">
+    <nav>
+      <img src="Picture/logoB.jpg" alt="logo" width="100" height="100">
+      <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="Aboutme.html">About Me</a></li>
+        <li><a href="Education.html">Education</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Work.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="sub-title">
+      <h2>Education</h2>
+    </div>
+
+    <div class="Education2-list">
+      <div class="Education2">
+        <img src="Picture/SKMP.jpeg" alt="2" height="150" width="150">
+        <div class="layer">
+          <a href="#"><i class="fa-solid fa-bus"></i></a>
+          <h3>Primary Education</h3>
+          <p>Sekolah Kebangsaan Mutiara Perdana <br>UPSR 2A 3B</p>
+        </div>
+      </div>
+
+      <div class="Education2">
+        <img src="Picture/rtu.jpeg" alt="3" height="150" width="150">
+        <div class="layer">
+          <a href="#"><i class="fa-solid fa-school"></i></a>
+          <h3>Secondary Education</h3>
+          <p>SMK RAJA TUN UDA <br>MUET Band4 <br> SPM 2A <br>STPM PNGK 3.17<br>Good in account </p>
+        </div>
+      </div>
+
+      <div class="Education2">
+        <img src="Picture/uitm.png" alt="4" height="150" width="150">
+        <div class="layer">
+          <a href="#"><i class="fa-solid fa-user-graduate"></i></a>
+          <h3>Tertiary Education</h3>
+          <p>UITM in RECORD MANAGEMENT <br>currently in study<br>Sem 1: GPA 2.84 <br>Sem2: GPA 3.38</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+       <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+      
+        function opentab(tabname) {
+          for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+          }
+          for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+          }
+          event.currentTarget.classList.add("active-link");
+          document.getElementById(tabname).classList.add("active-tab");
+        }
+      </script>
+
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwSnywgE-al-wAaLQhG7b7uoCtEYBV94oI_XpQxlOCw3YFYoC_2ScLipNMa0LbLd8E/exec'
+const form = document.forms['submit-to-google-sheet']
+
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => console.log('Success!', response))
+  .catch(error => console.error('Error!', error.message))
+})
+</script>
+      
+</body>
+</html>

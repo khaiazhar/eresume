@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/71cf8ec36c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="About">
+        <div class="container"> 
+            <nav>
+                <img src="Picture/logoB.jpg" alt="logo" width="100" height="100">
+                <ul>
+                    <li><a href="index1.html">Home</a></li>
+                    <li><a href="Aboutme.html">About Me</a></li>
+                    <li><a href="Education.html">Education</a></li>
+                    <li><a href="Skills.html">Skills</a></li>
+                    <li><a href="Work.html">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="row">
+                <div class="About-col-1">
+                    <img src="Picture/ws%20dp.jpg" alt="muka">
+                </div>
+                <div class="About-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello, my name is Nurul Batrisyia. I am twenty-one years old.<br>
+                    I am originally from Kangar, Perlis.<br> 
+                    I am a student of Record Management<br> at University Technology Mara (UiTM) Puncak Perdana, Selangor.
+                    <br><br>This is my website resume, which I use <br>to communicate information about myself in a certain way.
+                    <br> I am always looking for new challenges to help me grow and enhance my talents.
+                    <br> Please do not hesitate to contact me if you are interested in hiring me</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>          
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>MUET Band 4</span><br>Can communicate in English</li>
+                            <li><span>Microsoft</span><br>Good at handling tasks related to IT</li>
+                            <li><span>Critical Thinking</span><br>Loves to solve problems effectively<br></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>2022 until current</span><br>Degree in Record Management</li>
+                            <li><span>2020</span><br>STPM in SMK Sungai Ara</li>
+                            <li><span>2019</span><br>STPM in SMK Sungai Ara</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+              
+       <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+      
+        function opentab(tabname) {
+          for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+          }
+          for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+          }
+          event.currentTarget.classList.add("active-link");
+          document.getElementById(tabname).classList.add("active-tab");
+        }
+      </script>
+
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwSnywgE-al-wAaLQhG7b7uoCtEYBV94oI_XpQxlOCw3YFYoC_2ScLipNMa0LbLd8E/exec'
+const form = document.forms['submit-to-google-sheet']
+
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => console.log('Success!', response))
+  .catch(error => console.error('Error!', error.message))
+})
+</script>
+      
+</body>
+</html>

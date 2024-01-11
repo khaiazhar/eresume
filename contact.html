@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/71cf8ec36c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+ <!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <nav>
+      <img src="Picture/logoB.jpg" alt="logo" width="100" height="100">
+      <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="Aboutme.html">About Me</a></li>
+        <li><a href="Education.html">Education</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="Work.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="row Contact-list">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fas fa-paper-plane"></i>example@gmail.com</p>
+        <p><i class="fas fa-phone"></i>0123456789</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/nrl.batrisyia?utm_source=qr&igshid=YTlmZjI0ZWMzOA=="><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/batrisyia-fauzi-69302425a"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.tiktok.com/@nrlbatrsya?_t=8iI127gKRUn&_r=1"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <a href="#" class="btn btn2">Download CV</a>
+      </div>
+
+      <div class="contact-right">
+        <form name="submit-to-google-sheet">
+          <input type="text" name="Name" placeholder="Your Name" required>
+          <input type="email" name="Email" placeholder="Your Email" required>
+          <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="copyright">
+    &copy; 2023 My Website. All rights reserved.
+  </footer>
+</section>
+
+             <script>
+              var tablinks = document.getElementsByClassName("tab-links");
+              var tabcontents = document.getElementsByClassName("tab-contents");
+            
+              function opentab(tabname) {
+                for (tablink of tablinks) {
+                  tablink.classList.remove("active-link");
+                }
+                for (tabcontent of tabcontents) {
+                  tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+              }
+            </script>
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwSnywgE-al-wAaLQhG7b7uoCtEYBV94oI_XpQxlOCw3YFYoC_2ScLipNMa0LbLd8E/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+            
+</body>
+</html>
